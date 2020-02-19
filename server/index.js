@@ -25,15 +25,16 @@ massive({
 app.use(session({
     resave: false,
     saveUninitialized: false,
-    secret: SESSION_SECRET
+    secret: SESSION_SECRET,
+    cookie: {maxAge: 1000 * 60}
 }))
 
 app.use(checkForSession)
 
-app.get('/api/user', authCtrl.getUser)
-app.post('/api/login', authCtrl.loginUser)
-app.post('/api/register', authCtrl.registerUser)
-app.post('/api/logout', authCtrl.logoutUser)
+app.get('/auth/user', authCtrl.getUser)
+app.post('/auth/login', authCtrl.loginUser)
+app.post('/auth/register', authCtrl.registerUser)
+app.post('/auth/logout', authCtrl.logoutUser)
 
 
 
