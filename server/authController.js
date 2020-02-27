@@ -16,6 +16,7 @@ module.exports = {
         const user = foundUser[0]
         
         if(!user){
+            console.log('no user')
             res.status(401).send('User not found. Please register as a new user before loggin in.')
         }
         
@@ -25,6 +26,7 @@ module.exports = {
         }
         
         session.user = {id: user.user_id, username: user.username}
+        console.log(session.user)
         res.status(201).send(session.user)
     },
 

@@ -1,0 +1,39 @@
+.header-container {
+    height: 30vh;
+    width: 100%;
+    color: white;
+    font-size: 30px;
+    background-color: lightcoral;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header{
+    color: blueviolet;
+    margin: 20px;
+}
+
+.input-view-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.header-button {
+    background-color: blueviolet;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+}
+
+.header-input {
+    border: none;
+    margin: 10px;
+    border-radius: 15px;
+    height: 20px;
+    margin: 10px;
+}

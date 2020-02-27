@@ -1,8 +1,9 @@
 import React from 'react';
 import {connect} from 'react-redux';
-// Make this component display the username from redux store. 
+import './Username.css'
+
 function Username(props){
-    // console.log(props)
+    
     return(
         <div>
             {props.user.username ? 

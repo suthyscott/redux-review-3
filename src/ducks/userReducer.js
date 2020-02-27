@@ -20,14 +20,16 @@ export const checkUser =() =>{
 
 export function loginUser(username, password){
     let user = axios.post(`/auth/login`, {username, password}).then(res => res.data)
+    console.log('hit login reducer', user)
     return {
-        type: REGISTER_USER,
+        type: LOGIN_USER,
         payload: user
     }
 }
 
 export function registerUser(username, password){
     let user = axios.post(`/auth/register`, {username, password}).then(res => res.data)
+    console.log(user)
     return {
         type: REGISTER_USER,
         payload: user
@@ -50,18 +52,20 @@ export default function (state = initialState, action){
         case CHECK_USER + '_FULFILLED':
             return {...state, username: action.payload.username, id: action.payload.id}
         case REGISTER_USER + '_PENDING':
+            console.log('register pending')
             return {...state, username: 'Loadiiiiiiiiiiiiing'}
         case REGISTER_USER + '_FULFILLED':
+            console.log(action.payload)
             return {...state, username: action.payload.username, id: action.payload.id}   
-        case REGISTER_USER + '_PENDING':
+        case LOGIN_USER + '_PENDING':
+            console.log('hit pending')
             return {...state, username: 'Loadiiiiiiiiiiiiing'}
-        case REGISTER_USER + '_FULFILLED':
+        case LOGIN_USER + '_FULFILLED':
+            console.log('hit fulfilled', action.payload)
             return {...state, username: action.payload.username, id: action.payload.id}   
         case LOGOUT_USER + '_PENDING':
-            console.log('hit')
             return {...state, username: 'Loadiiiiiiiiiiiiing'}
         case LOGOUT_USER :
-            console.log('hit')
             return {...state, username: action.payload.username, id: action.payload.id}   
         default: 
             return state
