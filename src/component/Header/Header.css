@@ -10,8 +10,30 @@
 }
 
 .header{
+    height: 50px;
+    width: 100%;
     color: blueviolet;
     margin: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+/* .second-header:hover {
+    margin-left: 100%;
+    animation-name: slide-second-header;
+    animation-duration: 3s;
+} */
+
+@keyframes slide-second-header {
+    0% {
+        margin-left: 100%;
+        z-index: 5;
+    }
+    100% {
+        margin: 0;
+        color: green;
+        z-index: 5;
+    }
 }
 
 .input-view-container {
@@ -28,6 +50,12 @@
     margin: 10px;
     border: none;
     border-radius: 15px;
+    outline: none
+}
+
+.header-button:hover {
+    transform: scale(1.2);
+    transition: .1s;
 }
 
 .header-input {
@@ -36,4 +64,55 @@
     border-radius: 15px;
     height: 20px;
     margin: 10px;
+    outline: none;
+    padding: 3px 6px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+.header-input:focus {
+    animation-name: what-is-focus;
+    animation-duration: 5s;
+}
+
+@keyframes what-is-focus {
+    0% {
+        background-color: black;
+    }
+    100% {
+        background-color: brown;
+    }
+}
+
+
+.first {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    height: 30px;
+    margin: 10px;
+    border: none;
+    border-radius: 15px;
+    outline: none
+}
+
+.second {
+    background-color: green;
+    color: white;
+    font-size: 20px;
+    animation-name: blow-up;
+    animation-duration: .5s;
+}
+
+@keyframes blow-up {
+    0% {
+        height: 30px;
+    }
+
+    100% {
+        height: 500px;
+        width: 1200px;
+        background-color: hotpink;
+        color: black
+    }
 }

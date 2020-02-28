@@ -1,5 +1,42 @@
+.username-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 #username {
     font-size: 60px;
     color: aqua;
-  
   }
+
+#username:active {
+    animation-name: name-transition;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+}
+
+.menu-icon {
+    position: absolute;
+    left: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    color: aqua;
+    font-size: 30px
+}
+
+@keyframes name-transition {
+    0% {
+        color: black
+    }
+    100% {
+        color: red;
+        font-size: 200px;
+    }
+}

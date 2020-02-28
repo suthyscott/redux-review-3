@@ -11,7 +11,8 @@ class Header extends React.Component {
             showInputs: false,
             username: '',
             password: '',
-            loggedIn: false
+            loggedIn: false,
+            showSecondHeader: false
 
         }
     }
@@ -53,7 +54,8 @@ class Header extends React.Component {
     render() {
         return (
             <div className='header-container'>
-                <header className='header'>Header.js</header>
+                <header className='header'>This is a header</header>
+                {/* <header className='second-header'>This is a second header</header> */}
 
                 {this.state.showInputs ?
 
